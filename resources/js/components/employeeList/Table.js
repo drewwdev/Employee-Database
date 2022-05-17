@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import TableRow from "./TableRow";
 
 class Table extends Component {
     constructor(props) {
@@ -16,8 +17,11 @@ class Table extends Component {
 
     // Get employee list
     getEmployeeList = () => {
+        let self = this;
         axios.get("/get/employees/list").then(function (response) {
-            console.log(response);
+            self.setState({
+                employees: response.data,
+            });
         });
     };
 
@@ -45,12 +49,16 @@ class Table extends Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                    {this.state.employees.map(
+                                        (employee, index) => {
+                                            return (
+                                                <TableRow
+                                                    key={index}
+                                                    data={employee}
+                                                />
+                                            );
+                                        }
+                                    )}
                                 </tbody>
                             </table>
                         </div>
