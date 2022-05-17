@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Table from "./components/Table";
+import Table from "./employeeList/Table";
 
 function App() {
     return (

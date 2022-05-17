@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component } from "react";
 
 class Table extends Component {
@@ -8,7 +9,17 @@ class Table extends Component {
         };
     }
 
-    getEmployeeList = () => {};
+    // Life cycle method
+    componentDidMount() {
+        this.getEmployeeList();
+    }
+
+    // Get employee list
+    getEmployeeList = () => {
+        axios.get("/get/employee/list").then(function (response) {
+            console.log(response);
+        });
+    };
 
     render() {
         return (
