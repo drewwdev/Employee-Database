@@ -16,7 +16,7 @@ class Table extends Component {
 
     // Get employee list
     getEmployeeList = () => {
-        axios.get("/get/employee/list").then(function (response) {
+        axios.get("/get/employees/list").then(function (response) {
             console.log(response);
         });
     };

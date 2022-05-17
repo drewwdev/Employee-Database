@@ -5505,7 +5505,7 @@ var Table = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "getEmployeeList", function () {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get/employee/list").then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/get/employees/list").then(function (response) {
         console.log(response);
       });
     });
