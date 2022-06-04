@@ -14,3 +14,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/get/employees/list', [EmployeesController::class, 'getEmployeesList'])->name('employee.list');
 
 Route::post('/get/individual/employee/details', [EmployeesController::class, 'getEmployeeDetails'])->name('employee.details');
+
+Route::post('/update/employee/data', [EmployeesController::class, 'updateEmployeeData']);
+
+Route::delete('/delete/employee/data/{employee}', [EmployeesController::class, 'destroy']);

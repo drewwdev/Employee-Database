@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
 import ViewModal from "./Modal/ViewModal";
+import UpdateModal from "./Modal/UpdateModal";
+import DeleteModal from "./Modal/DeleteModal";
 
 class TableActionButtons extends Component {
     constructor(props) {
@@ -46,12 +48,36 @@ class TableActionButtons extends Component {
                     modalId={this.props.eachRowId}
                     employeeData={this.state}
                 />
-                <button type="button" className="btn btn-info">
+                <button
+                    type="button"
+                    className="btn btn-info"
+                    data-bs-toggle="modal"
+                    data-bs-target={"#updateModal" + this.props.eachRowId}
+                    onClick={() => {
+                        this.getEmployeeDetails(this.props.eachRowId);
+                    }}
+                >
                     Update
                 </button>
-                <button type="button" className="btn btn-danger">
+                <UpdateModal
+                    modalId={this.props.eachRowId}
+                    employeeData={this.state}
+                />
+                <button
+                    type="button"
+                    className="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target={"#deleteModal" + this.props.eachRowId}
+                    onClick={() => {
+                        this.getEmployeeDetails(this.props.eachRowId);
+                    }}
+                >
                     Delete
                 </button>
+                <DeleteModal
+                    modalId={this.props.eachRowId}
+                    employeeData={this.state}
+                />
             </div>
         );
     }

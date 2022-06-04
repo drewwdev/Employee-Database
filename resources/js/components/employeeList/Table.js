@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { ToastContainer } from "react-toastify";
 import TableRow from "./TableRow";
 
 class Table extends Component {
@@ -15,7 +16,6 @@ class Table extends Component {
         this.getEmployeeList();
     }
 
-    // Get employee list
     getEmployeeList = () => {
         let self = this;
         axios.get("/get/employees/list").then(function (response) {
@@ -28,6 +28,7 @@ class Table extends Component {
     render() {
         return (
             <div className="container">
+                <ToastContainer />
                 <div className="row justify-content-center">
                     <div className="col-md-8">
                         <div className="card">
