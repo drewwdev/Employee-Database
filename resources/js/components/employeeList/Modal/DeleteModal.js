@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class DeleteModal extends Component {
     constructor(props) {
@@ -9,7 +10,15 @@ class DeleteModal extends Component {
 
     deleteEmployeeData = (employee) => {
         axios.delete("/delete/employee/data/" + employee).then(() => {
-            toast.error("Employee deleted successfully");
+            toast.error("Employee deleted successfully", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             setTimeout(() => {
                 location.reload();
             }, 2500);

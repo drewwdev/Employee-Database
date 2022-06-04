@@ -18,3 +18,6 @@ Route::post('/get/individual/employee/details', [EmployeesController::class, 'ge
 Route::post('/update/employee/data', [EmployeesController::class, 'updateEmployeeData']);
 
 Route::delete('/delete/employee/data/{employee}', [EmployeesController::class, 'destroy']);
+
+Route::post('/store/employee/data', [EmployeesController::class, 'store']);
+
