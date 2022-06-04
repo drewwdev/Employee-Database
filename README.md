@@ -4,3 +4,13 @@ This project has a simple focus. It is an employee database with the ability to 
 
 Login Page
 ![Login Page](https://i.imgur.com/hzeukSy.png)
+
+Register Page
+![Register Page](https://i.imgur.com/MrbEdU6.png)
+
+Viewing all employees
+![Viewing all employees](https://i.imgur.com/TCLOLvY.png)
+
+Viewing a single employee
+![Viewing a single employee](https://i.imgur.com/ZPbEBeO.png)
+
